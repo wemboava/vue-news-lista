@@ -1,6 +1,7 @@
 <template>
     <!-- <main-header></main-header> -->
     <div class="main_container">
+    <main-header />
         <transition name="fade">
             <router-view></router-view>
         </transition>
@@ -10,13 +11,15 @@
 
 <script>
     // import { mapActions } from 'vuex'
-    // import MainHeader from '_views/modules/Header.vue'
+    import MainHeader from '../../components/Header.vue'
     // import MainFooter from '_views/modules/Footer.vue'
 
     export default {
         name: 'App',
 
-        components: {},
+        components: {
+            MainHeader
+        },
 
         mounted () {}
     }
