@@ -5,20 +5,21 @@
         <transition name="fade">
             <router-view></router-view>
         </transition>
+    <main-footer />
     </div>
-    <!-- <main-footer></main-footer> -->
 </template>
 
 <script>
     // import { mapActions } from 'vuex'
     import MainHeader from '../../components/Header.vue'
-    // import MainFooter from '_views/modules/Footer.vue'
+    import MainFooter from '../../components/Footer.vue'
 
     export default {
         name: 'App',
 
         components: {
-            MainHeader
+            MainHeader,
+            MainFooter
         },
 
         mounted () {}

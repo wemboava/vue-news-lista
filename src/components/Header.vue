@@ -29,6 +29,10 @@ export default {
             &__item {
                 margin-left: 40px;
                 cursor: pointer;
+                transition: color ease .5s;
+                &:hover {
+                    color: #19aaff;
+                }
             }
         }
     }
