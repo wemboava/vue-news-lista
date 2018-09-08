@@ -1,19 +1,44 @@
 <template>
-    <div class="card" :style="{ background: `url(/src/assets/images/${image}.jpg) center no-repeat`, backgroundSize: 'cover' }">
-        <span class="card__category">{{ category }}</span>
+    <div>
+        <div v-if="isArticle && hasImage" @click="() => getArticles(category)" class="card card--article">
+            <div class="card__image" :style="{ background: `url(${image}) top no-repeat`, backgroundSize: 'cover' }"></div>
+            <span class="card__category card__category--article">{{ name }}</span>
+        </div>
+        <div v-if="!isArticle" @click="() => getArticles(category)" class="card" :style="{ background: `url(/src/assets/images/${image}.jpg) center no-repeat`, backgroundSize: 'cover' }">
+            <span class="card__category">{{ name }}</span>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    methods: {
+        getArticles(category) {
+            // this.$http.get(`https://newsapi.org/v2/top-headlines?country=br&category=${category}&apiKey=44c659bfd31544d886c311588297a5c5`).then(response => {
+            this.$router.push(`/articles/${category}`)
+        }
+    },
+    computed: {
+        hasImage() {
+            return this.image ? this.image.indexOf('http') != -1 : null
+        }
+    },
     props: {
         image: {
+            type: String,
+            default: ''
+        },
+        name: {
             type: String,
             default: ''
         },
         category: {
             type: String,
             default: ''
+        },
+        isArticle: {
+            type: Boolean,
+            default: false
         }
     }
 }
@@ -29,15 +54,27 @@ export default {
         cursor: pointer;
         margin: 20px;
 
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        &--article {
+            height: 330px;
+        }
+
+        &__image {
+            height: 250px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            border-radius: 8px 8px 0 0;
+        }
 
         &:hover {
             box-shadow: 0px 7px 1px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12);
             .card__category {
-                height: 50px;
-                font-size: 22px;
+                height: 45px;
+                font-size: 18px;
+                &--article {
+                    height: 100px;
+                    font-size: 16px;
+                }
             }
         }
 
@@ -54,6 +91,11 @@ export default {
             border-radius: 0 0 8px 8px;
             transition: all ease .2s;
             vertical-align: middle;
+            &--article {
+                height: 80px;
+                background-color: #fff;
+                color: #2c3e50;
+            }
         }
     }
 </style>

@@ -13,18 +13,18 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/home'
+            redirect: '/articles'
         },
         {
-            path: '/home',
+            path: '/articles',
             component: AdminTemplate,
             children: [
                 {
-                    path: '/',
+                    path: '/articles',
                     component: Home,
                 },
                 {
-                    path: '/articles',
+                    path: '/articles/:category',
                     component: Articles,
                 }
             ]
