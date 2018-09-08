@@ -1,6 +1,6 @@
 <template>
     <div class="card" :style="{ background: `url(/src/assets/images/${image}.jpg) center no-repeat`, backgroundSize: 'cover' }">
-        <span class="card__category">Esportes</span>
+        <span class="card__category">{{ category }}</span>
     </div>
 </template>
 
@@ -8,6 +8,10 @@
 export default {
     props: {
         image: {
+            type: String,
+            default: ''
+        },
+        category: {
             type: String,
             default: ''
         }
@@ -31,6 +35,10 @@ export default {
 
         &:hover {
             box-shadow: 0px 7px 1px -4px rgba(0,0,0,0.2), 0px 12px 17px 2px rgba(0,0,0,0.14), 0px 5px 22px 4px rgba(0,0,0,0.12);
+            .card__category {
+                height: 50px;
+                font-size: 22px;
+            }
         }
 
         &__category {
@@ -44,6 +52,8 @@ export default {
             bottom: 0;
             font-weight: bold;
             border-radius: 0 0 8px 8px;
+            transition: all ease .2s;
+            vertical-align: middle;
         }
     }
 </style>

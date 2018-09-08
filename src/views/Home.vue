@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <card image="sports"></card>
-        <card image="technology"></card>
-        <card image="saude"></card>
-        <card image="ciencia"></card>
-        <card image="negocios"></card>
-        <card image="entreterimento"></card>
+        <card category="Esportes" image="sports"></card>
+        <card category="Tecnologia" image="technology"></card>
+        <card category="Saude" image="saude"></card>
+        <card category="Ciência" image="ciencia"></card>
+        <card category="Negócios" image="negocios"></card>
+        <card category="Entreterimento" image="entreterimento"></card>
     </div>
 </template>
 
