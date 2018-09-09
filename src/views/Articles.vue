@@ -5,6 +5,7 @@
             v-for="(article, index) in articles"
             :key="index"
             category="sports"
+            :link="article.url"
             :name="article.title"
             :image="article.urlToImage"
         ></card>

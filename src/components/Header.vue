@@ -2,14 +2,22 @@
     <header class="header">
         <img class="header__logo" src="../assets/images/news-logo.png" alt="" />
         <div class="header__options">
-            <router-link class="header__options__item" to="/articles" router>Home</router-link>
-            <router-link class="header__options__item" to="/family" router>Grupo da Familia</router-link>
+            <router-link class="header__options__item" :style="this.$route.path == '/articles' ? styleObject : ''" to="/articles" router>Home</router-link>
+            <router-link class="header__options__item"  :style="this.$route.path == '/family' ? styleObject : ''" to="/family" router>Grupo da Familia</router-link>
         </div>
     </header>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            styleObject: {
+                color: '#19aaff',
+                borderBottom: 'solid 1px #19aaff'
+            }
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>
