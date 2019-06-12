@@ -1,11 +1,11 @@
 <template>
     <div class="container">
-        <card category="Esportes" image="sports"></card>
-        <card category="Tecnologia" image="technology"></card>
-        <card category="Saude" image="saude"></card>
-        <card category="Ciência" image="ciencia"></card>
-        <card category="Negócios" image="negocios"></card>
-        <card category="Entreterimento" image="entreterimento"></card>
+        <card category="sports" name="Esportes" image="sports"></card>
+        <card category="technology" name="Tecnologia" image="technology"></card>
+        <card category="health" name="Saude" image="saude"></card>
+        <card category="science" name="Ciência" image="ciencia"></card>
+        <card category="business" name="Negócios" image="negocios"></card>
+        <card category="entertainment" name="Entreterimento" image="entreterimento"></card>
     </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
     .container {
-        padding: 30px;
+        padding: 30px 30px 60px 30px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
